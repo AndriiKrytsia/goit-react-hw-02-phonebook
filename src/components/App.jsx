@@ -11,7 +11,11 @@ export class App extends Component {
   };
 
   handelAddContact = (name, number) => {
-    if (this.state.contacts.find(contact => contact.name === name)) {
+    if (
+      this.state.contacts.find(
+        contact => contact.name.toLowerCase === name.toLowerCase
+      )
+    ) {
       alert(`${name} is already in contacts`);
       return;
     }
